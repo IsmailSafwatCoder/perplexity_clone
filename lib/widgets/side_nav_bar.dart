@@ -18,40 +18,50 @@ class _SidenavbarState extends State<Sidenavbar> {
       width: isCollepes ? 64 : 140,
       color: AppColors.sideNav,
       child: Column(
-        crossAxisAlignment: isCollepes
-            ? CrossAxisAlignment.center
-            : CrossAxisAlignment.start,
         children: [
           SizedBox(height: 14),
           Icon(
             Icons.auto_awesome_mosaic,
             color: AppColors.whiteColor,
-            size: 30,
+            size: isCollepes ? 30 : 40,
           ),
-          SizedBox(height: 22),
-          SideBarBottom(isCollepes: isCollepes, text: "Home", icon: Icons.add),
-          SideBarBottom(
-            isCollepes: isCollepes,
-            text: "Search",
-            icon: Icons.search,
-          ),
-          SideBarBottom(
-            isCollepes: isCollepes,
-            text: "Spaces",
-            icon: Icons.language,
-          ),
-          SideBarBottom(
-            isCollepes: isCollepes,
-            text: "Discover",
-            icon: Icons.auto_awesome_sharp,
-          ),
-          SideBarBottom(
-            isCollepes: isCollepes,
-            text: "Librarys",
-            icon: Icons.cloud_outlined,
-          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: isCollepes
+                  ? CrossAxisAlignment.center
+                  : CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 22),
+                SideBarBottom(
+                  isCollepes: isCollepes,
+                  text: "Home",
+                  icon: Icons.add,
+                ),
+                SideBarBottom(
+                  isCollepes: isCollepes,
+                  text: "Search",
+                  icon: Icons.search,
+                ),
+                SideBarBottom(
+                  isCollepes: isCollepes,
+                  text: "Spaces",
+                  icon: Icons.language,
+                ),
+                SideBarBottom(
+                  isCollepes: isCollepes,
+                  text: "Discover",
+                  icon: Icons.auto_awesome_sharp,
+                ),
+                SideBarBottom(
+                  isCollepes: isCollepes,
+                  text: "Librarys",
+                  icon: Icons.cloud_outlined,
+                ),
 
-          Spacer(),
+                Spacer(),
+              ],
+            ),
+          ),
           GestureDetector(
             onTap: () {
               setState(() {
